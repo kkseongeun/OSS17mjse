@@ -42,7 +42,7 @@ int main(void) {//main
 	printf("Guess how many times the star is twinkling.\n");
 	gotoxy(xx/2, (yy/2)+1);
 	printf("Press any key to start.\n");
-	getch();
+	getchar();
 
 	while(life > 0)
 	{

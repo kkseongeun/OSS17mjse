@@ -3,6 +3,6 @@ CFLAGS = -I../include
 
 all : $(OBJECTS)
 	cp -f $^ ../
-
 clean :
 	rm -rf *.o
+
