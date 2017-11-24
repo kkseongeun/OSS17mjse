@@ -22,6 +22,7 @@ int main(void) {//main
 		printf("==========================================\n");
 		printf("1.   G  A  M  E           S  T  A  R  T   \n");
 		printf("2.   F  I  N  I  S  H        G  A  M  E   \n");
+		printf("==========================================\n");
 		printf("> ");
 		scanf("%d", &menu);
 	}
@@ -46,7 +47,7 @@ int main(void) {//main
 	while(life > 0)
 	{
 		size(&xx, &yy);
-		system("CLS")
+		system("CLS");
 	for(tmp=3; tmp >= 0; tmp --) {
 		gotoxy((xx/2)-19, (yy/2)-1);
 		printf("start in %d seconds.", tmp);
@@ -57,11 +58,11 @@ int main(void) {//main
 	gotoxy(x/2-5, start_y-1);
 	printf("< score : %d  life : %d >", score, life);
 	draw(start_x, start_y, x, y);
-	gotoxy(Start_x, y+4);
-	printf("How many times did the star twinkle?(5~15 times)");
+	gotoxy(start_x, y+4);
+	printf("How many times did the star twinkle?(5~25 times)");
 	srand((unsigned)time(NULL));
-	game_conut = (rand()%20)+5;
-	for(tmp = 0; tmp < game_conut; tmp++) {
+	game_count = (rand()%20)+5;
+	for(tmp = 0; tmp < game_count; tmp++) {
 		xx = (rand()%(x-2))+start_x+1;
 		yy = (rand()%(y-2))+start_y+1;
 		gotoxy(xx, yy);
@@ -69,7 +70,7 @@ int main(void) {//main
 		Sleep(game_delay);
 		printf(" ");
 	}
-	gotoxy(start_x+34, y+4);
+	gotoxy(start_x+50, y+4);
 	scanf("%d", &tmp);
 	if(tmp == game_count) {
 		gotoxy(start_x, y+5);
@@ -77,7 +78,7 @@ int main(void) {//main
 		score += 50;
 		game_delay -= 80;
 		//life++;
-		Sleep(1000);
+		Sleep(5000);
 		print_score(score, life);
 	}
 	else{
@@ -86,10 +87,10 @@ int main(void) {//main
 		gotoxy(start_x, y+6);
 		printf("The correct answer is %d.", game_count);
 		gotoxy(start_x, y+7);
-		Sleep(1000);
+		Sleep(5000);
 		life--;
 		score -= 5;
-		printf_score(score, life);
+		print_score(score, life);
 	}
 	}
 	if(life <= 0) {
