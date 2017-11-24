@@ -1,9 +1,4 @@
 #include "work.h"
-#include <stdio.h>
-#include <windows.h>
-#include <conio.h>
-#include <time.h>
-#include <string.h>
 
 void print_score(int score, int life){
 int xx, yy;

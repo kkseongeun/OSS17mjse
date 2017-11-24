@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <windows.h>
-#include <conio.h>
-#include <time.h>
-#include <string.h>
+#include "work.h"
 
 int main(void) {//main
 	int start_x = 5;

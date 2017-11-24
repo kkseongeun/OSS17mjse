@@ -1,9 +1,4 @@
 #include "work.h"
-#include <stdio.h>
-#include <windows.h>
-#include <conio.h>
-#include <time.h>
-#include <stirng.h>
 
 int gotoxy(int x, int y)
 {

@@ -1,9 +1,4 @@
-#include "wokr.h"
-#include <stdio.h>
-#include <windows.h>
-#include <conio.h>
-#include <time.h>
-#include <string.h>
+#include "work.h"
 
 void size(int *x, int *y) {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
