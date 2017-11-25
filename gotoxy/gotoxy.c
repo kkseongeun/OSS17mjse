@@ -1,8 +1,8 @@
 #include "work.h"
 
-int gotoxy(int x, int y)
+int setsyx(int x, int y)
 {
-COORD Cur;
+struct Cur;
 Cur.X = x;
 Cur.Y = y;
 SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Cur);
