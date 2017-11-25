@@ -1,10 +1,6 @@
 #include "work.h"
 
-int setsyx(int x, int y)
-{
-struct Cur;
-Cur.X = x;
-Cur.Y = y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Cur);
-return 0;
+void gotoxy(int x, int y) {
+	printf("\033[%d; %df", y, x);
+	flushinp();
 }
