@@ -1,7 +1,5 @@
-CC = GCC
-
-all : draw.o gotoxy.o main.o memo.o
-	$(CC) -o OSS17mjse $^
+all : draw.o gotoxy.o main.o printscore.o size.o
+	$(CC) -o OSS17mjse $^ -lcurses
 
 draw.o :
 	cd draw && make

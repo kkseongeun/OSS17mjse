@@ -105,7 +105,7 @@ int main(void) {//main
 		gotoxy(xx/2-19, yy/2);
 		printf("=========================================\n");
 		gotoxy(xx/2-19, yy/2+1);
-		printf("  G  A  M  E                   O  V  E  R\n", score);
+		printf("  G  A  M  E                   O  V  E  R\n");
 		gotoxy(xx/2-19, yy/2+2);
 		printf("=========================================\n");
 		sleep(2000);

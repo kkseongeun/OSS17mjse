@@ -1,4 +1,4 @@
-OBJECTS = $(patsubst %.c, %.o, $(wildcard *c.))
+OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
 CFLAGS = -I../include
 
 all : $(OBJECTS)
