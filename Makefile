@@ -7,6 +7,6 @@ SUBDIRS         := draw gotoxy main printscore
 include $(TOPDIR)/Config.mk
 
 all : compile $(OBJS)
-        $(CC) $(OBJS) $(addsuffix /built-in.o,$(SUBDIRS)) -o $(TARGET) -lcurses
+	$(CC) $(OBJS) $(addsuffix /built-in.o,$(SUBDIRS)) -o $(TARGET) -lcurses
 
 include $(TOPDIR)/Rules.mk
