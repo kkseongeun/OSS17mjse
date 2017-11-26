@@ -1,8 +1,14 @@
-OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
-CFLAGS = -I../include
+ifndef TOPDIR
+TOPDIR          := ..
+endif
 
-all : $(OBJECTS)
-	cp -f $^ ../
+include $(TOPDIR)/Config.mk
 
-clean : 
-	rm -rf *.o
+TARGET          := built-in.o
+SUBDIRS         :=
+OBJS            := $(patsubst %.c, %.o, $(wildcard *.c))
+
+all : compile $(OBJS)
+        $(LD) -r $(addsuffix /$(TARGET),$(SUBDIRS)) $(OBJS) -o $(TARGET)
+
+include $(TOPDIR)/Rules.mk

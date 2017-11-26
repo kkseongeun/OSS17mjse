@@ -1,27 +1,12 @@
-all : draw.o gotoxy.o main.o printscore.o size.o
-	$(CC) -o OSS17mjse $^ -lcurses
+.EXPORT_ALL_VARIABLES:
 
-draw.o :
-	cd draw && make
+TARGET          := OSS17mjse
+TOPDIR          := $(shell /bin/pwd)
+SUBDIRS         := draw gotoxy main printscore
 
-gotoxy.o : 
-	cd gotoxy && make
+include $(TOPDIR)/Config.mk
 
-main.o :
-	cd main && make
+all : compile $(OBJS)
+        $(CC) $(OBJS) $(addsuffix /built-in.o,$(SUBDIRS)) -o $(TARGET) -lcurses
 
-printscore.o : 
-	cd printscore && make
-
-size.o : 
-	cd size && make
-
-clean : 
-	cd draw && make clean
-	cd gotoxy && make clean
-	cd main && make clean
-	cd printscore && make clean
-	cd size && make clean 
-	rm -rf *.o OSS17mjse
-
-
+include $(TOPDIR)/Rules.mk
